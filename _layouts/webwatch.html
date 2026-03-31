@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ee0826">
+    <meta name="apple-mobile-web-app-title" content="webchnl">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>{{ page.abtitle }} | webchnl</title>
+    <meta property="og:title" content="{{ page.abtitle }} | webchnl" />
+    <meta property="og:description" content="Free TV, by Individuals." />
+    <meta property="og:url" content="/watch/index.php?slug={{ page.abtitle }}" />
+    <meta property="og:image" content="/assets/img/channelicons/{{ page.abtitle }}.png" />
+    <meta name="og:site_name" content="webchnl">
+    <meta name="twitter:site" content="@webchnl">
+    <meta name="theme-color" content="#ee0826" />
+    <link rel="icon" href="/assets/svg/webchnl_icon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://webchnl.com/assets/css/watch.css?12">
+    <style>
+        body {
+            background-image: url("{{ page.bg }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100dvh;
+        }
+        .vjs-offline .vjs-progress-control { display: none !important; }
+        .vjs-offline .vjs-remaining-time,
+        .vjs-offline .vjs-remaining-time-display { display: none !important; }
+
+        
+            .video-js .vjs-play-progress,
+            .video-js .vjs-volume-level { background-color: #E500FF !important; }
+            .vjs-loading-spinner { border-color: rgba(229, 0, 255, 0.3) !important; }
+            .vjs-loading-spinner:before,
+            .vjs-loading-spinner:after { border-top-color: #E500FF !important; }
+                    
+        .topbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(5, 0, 33, 0.7);
+            box-shadow: none;
+        }
+
+        .info {
+            backdrop-filter: blur(10px);
+            background-color: rgba(5, 0, 33, 0.7);
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <a href="/"><button class="menubutton"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></a>
+        <p id="channel-title-text">{{ page.abtitle }}</p>
+    </div>
+
+    <div class="main">
+        <div class="player">
+            <body>
+                <video id="my-video" class="video-js vjs-fluid" playsinline loop controls preload="auto" width="640" height="264" poster="{{ page.poster }}" data-setup="{}">
+                    <source src="{{ page.m3u8 }}" type="application/x-mpegURL">
+                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                </video>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"123ffff6c43846c5916f88b2da1d65ae","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</div>
+
+        <div class="info">
+            <p id="viewer-count" style="color: rgb(255, 91, 91);">● 0</p>
+            <h1 id="about-title">About {{ page.abtitle }}</h1>
+            <div id="about-description"><p>{{ page.desc }}<br>This page was last updated on {{ site.time | date: "%a, %d %b %Y at %H:%M." }}</p>
+        </div>
+    </div>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c22cd1b09171bea1a1cbdc9d-|49" defer></script></body>
+</html>
