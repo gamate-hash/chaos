@@ -283,7 +283,7 @@ Browse channels
         </ul>
             <div class="guide-section guide-header signup-promo guided-help-box">
     <p>
-    {{ site.content }}
+    {{ content }}
     </p>
     <div id="guide-builder-promo-buttons" class="signed-out clearfix">
       <a href="https://accounts.google.com/ServiceLogin?service=youtube&amp;uilel=3&amp;hl=en_US&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26hl%3Den_US%26next%3D%252F%253Ffeature%253Dsignin%26nomobiletemp%3D1&amp;passive=true" class="yt-uix-button   yt-uix-sessionlink yt-uix-button-primary" data-sessionlink="ei=CNDGlcXnk7UCFTgIIQodsnZ9KA%3D%3D"><span class="yt-uix-button-content">Sign in &#8250;</span></a>
@@ -1747,4 +1747,12 @@ if (window.yt.timing) {yt.timing.tick("js_page");}    </script>
 yt.setConfig('TIMING_ACTION', "glo");    </script>
 <script>yt.setConfig({'XSRF_TOKEN': "9sT0Wv0iyN2yoApKBDqsZZgWwZR8MTM1OTc2MzQwMEAxMzU5Njc3MDAw",'XSRF_REDIRECT_TOKEN': "n0F98G3KSF8n6CrNYsA9Z63WfAV8MTM1OTY5MTQwMUAxMzU5Njc3MDAx",'XSRF_FIELD_NAME': "session_token"});</script><script>yt.setConfig('THUMB_DELAY_LOAD_BUFFER', 300);</script>    <script>
 if (window.yt.timing) {yt.timing.tick("js_foot");}    </script>
+<style>
+  #yt-masthead #logo {
+    background: no-repeat url({{ page.ytlogo }}) 0 0 !important;
+    background-size: 100vw 100vh;
+    width: 72px !important;
+    height: 30px !important;
+}
+</style>
 <div id="debug"></div></body></html>
